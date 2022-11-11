@@ -1,0 +1,104 @@
+int val = 0;
+int pirstate = LOW;
+int g1 = 1;
+int r1 = 2;
+int g2 = 3;
+int r2 = 4;
+int g3 = 5;
+int r3 = 6;
+int g4 = 7;
+int r4 = 8;
+int ir1 = 9;
+int ir2 = 10;
+int ir3 = 11;
+int ir4 = 12;
+int sens1 = 13;
+int sens2 = 14;
+int sens3 = 15;
+int sens4 = 0;
+
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(g1, OUTPUT);
+  pinMode(r1, OUTPUT);
+  pinMode(g2, OUTPUT);
+  pinMode(r2, OUTPUT);
+  pinMode(g3, OUTPUT);
+  pinMode(r3, OUTPUT);
+  pinMode(g4, OUTPUT);
+  pinMode(r4, OUTPUT);
+  pinMode(ir1, INPUT);
+  pinMode(ir2, INPUT);
+  pinMode(ir3, INPUT);
+  pinMode(ir4, INPUT);
+  //pinMode(sens1, INPUT);
+  Serial.begin(115200);
+}
+
+
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  
+
+  //ir and ur reading
+  if (digitalRead(9) == LOW ) {
+      digitalWrite(g1, HIGH);
+      digitalWrite(g2, LOW);
+      digitalWrite(g3, LOW);
+      digitalWrite(g4, LOW);
+      digitalWrite(r1, LOW);
+      digitalWrite(r2, HIGH);
+      digitalWrite(r3, HIGH);
+      digitalWrite(r4, HIGH);
+      delay(5000);
+      digitalWrite(g1, LOW);
+      digitalWrite(r1, HIGH);
+    } 
+   
+
+    if (digitalRead(10) == LOW ) {
+
+      digitalWrite(g1, LOW);
+      digitalWrite(g2, HIGH);
+      digitalWrite(g3, LOW);
+      digitalWrite(g4, LOW);
+      digitalWrite(r1, HIGH);
+      digitalWrite(r2, LOW);
+      digitalWrite(r3, HIGH);
+      digitalWrite(r4, HIGH);
+      delay(5000);
+      digitalWrite(g2, LOW);
+      digitalWrite(r2, HIGH);
+    }
+   
+    if (digitalRead(11) == LOW ) {
+
+      digitalWrite(g1, LOW);
+      digitalWrite(g2, LOW);
+      digitalWrite(g3, HIGH);
+      digitalWrite(g4, LOW);
+      digitalWrite(r1, HIGH);
+      digitalWrite(r2, HIGH);
+      digitalWrite(r3, LOW);
+      digitalWrite(r4, HIGH);
+      delay(5000);
+      digitalWrite(g3, LOW);
+      digitalWrite(r3, HIGH);
+    }
+   
+    if (digitalRead(12) == LOW ) {
+
+      digitalWrite(g1, LOW);
+      digitalWrite(g2, LOW);
+      digitalWrite(g3, LOW);
+      digitalWrite(g4, HIGH);
+      digitalWrite(r1, HIGH);
+      digitalWrite(r2, HIGH);
+      digitalWrite(r3, HIGH);
+      digitalWrite(r4, LOW);
+      delay(5000);
+      digitalWrite(g4, LOW);
+      digitalWrite(r4, HIGH);
+    }
+  }
